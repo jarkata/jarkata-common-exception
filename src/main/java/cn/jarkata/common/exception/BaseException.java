@@ -2,7 +2,7 @@ package cn.jarkata.common.exception;
 
 import java.util.Objects;
 
-public class BaseException extends RuntimeException {
+class BaseException extends RuntimeException {
 
     private String code;
     private String message;

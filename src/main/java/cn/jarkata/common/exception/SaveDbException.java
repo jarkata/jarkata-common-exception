@@ -1,4 +1,4 @@
-package cn.jarkata.commons.exception;
+package cn.jarkata.common.exception;
 
 public class SaveDbException extends BaseException {
 

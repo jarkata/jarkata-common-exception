@@ -6,7 +6,7 @@
 
     <groupId>cn.jarkata</groupId>
     <artifactId>jarkata-common-exception</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <name>jarkata common exception</name>
     <url>https://github.com/jarkata/jarkata-common-exception.git</url>

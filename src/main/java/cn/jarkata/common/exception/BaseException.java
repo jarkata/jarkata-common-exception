@@ -8,9 +8,16 @@ class BaseException extends RuntimeException {
     private String message;
 
     public BaseException(String code, String message) {
-        super(message);
+        this(code, message, null);
+    }
+
+    public BaseException(String code, String message, Throwable cause) {
+        this(code, message, cause, true);
+    }
+
+    public BaseException(String code, String message, Throwable cause, boolean writableStackTrace) {
+        super(message, cause, false, writableStackTrace);
         this.code = code;
-        this.message = message;
     }
 
     public String getCode() {

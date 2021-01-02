@@ -27,7 +27,7 @@ public class BaseException extends RuntimeException {
     @Override
     public String getMessage() {
         if (Objects.isNull(message)) {
-            return this.getMessage();
+            return super.getMessage();
         }
         return this.message;
     }

@@ -1,5 +1,8 @@
 package cn.jarkata.common.exception;
 
+/**
+ * 保存数据异常
+ */
 public class SaveDbException extends BaseException {
 
     public SaveDbException(String code, String message) {

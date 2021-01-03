@@ -2,6 +2,9 @@ package cn.jarkata.common.exception;
 
 import java.util.Objects;
 
+/**
+ * 基础异常
+ */
 public class BaseException extends RuntimeException {
 
     private String code;

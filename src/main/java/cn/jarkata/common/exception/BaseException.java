@@ -18,6 +18,7 @@ public class BaseException extends RuntimeException {
     public BaseException(String code, String message, Throwable cause, boolean writableStackTrace) {
         super(message, cause, false, writableStackTrace);
         this.code = code;
+        this.message = message;
     }
 
     public String getCode() {

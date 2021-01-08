@@ -36,7 +36,7 @@ public class BaseException extends RuntimeException {
      * @param writableStackTrace 是否写堆栈
      */
     public BaseException(String code, String message, Throwable cause, boolean writableStackTrace) {
-        super(message, cause, false, writableStackTrace);
+        super(code + "｜" + message, cause, false, writableStackTrace);
         this.code = code;
         this.message = message;
     }

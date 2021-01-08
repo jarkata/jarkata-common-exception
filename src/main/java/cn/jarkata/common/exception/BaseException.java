@@ -26,7 +26,7 @@ public class BaseException extends RuntimeException {
      * @param cause   上一次异常
      */
     public BaseException(String code, String message, Throwable cause) {
-        this(code, message, cause, true);
+        this(code, message, cause, false);
     }
 
     /**

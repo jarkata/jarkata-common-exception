@@ -10,6 +10,6 @@ public class UpdateDbException extends BaseException {
     }
 
     public UpdateDbException(String code, String message, Throwable cause) {
-        super(code, message, cause);
+        super(code, message, cause, false);
     }
 }

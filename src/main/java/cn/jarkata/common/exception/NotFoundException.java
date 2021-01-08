@@ -10,7 +10,7 @@ public class NotFoundException extends BaseException {
     }
 
     public NotFoundException(String code, String message, Throwable cause) {
-        super(code, message, cause);
+        super(code, message, cause, false);
     }
 
 }

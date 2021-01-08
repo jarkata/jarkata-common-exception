@@ -10,6 +10,6 @@ public class SaveDbException extends BaseException {
     }
 
     public SaveDbException(String code, String message, Throwable cause) {
-        super(code, message, cause);
+        super(code, message, cause, false);
     }
 }

@@ -22,4 +22,23 @@ public class BaseExceptionTest {
         System.out.println(message);
     }
 
+    @Test
+    public void testException() {
+        long start = System.currentTimeMillis();
+        for (int index = 0; index < 100000000; index++) {
+            try {
+                new NotFoundException("", "");
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        System.out.println(System.currentTimeMillis() - start);
+
+        long startstr = System.currentTimeMillis();
+        for (int index = 0; index < 100000000; index++) {
+            new String("1234".getBytes());
+        }
+        System.out.println(System.currentTimeMillis() - startstr);
+    }
+
 }

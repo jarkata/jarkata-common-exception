@@ -6,10 +6,11 @@
 
     <groupId>cn.jarkata</groupId>
     <artifactId>jarkata-common-exception</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>jarkata common exception</name>
     <url>https://github.com/jarkata/jarkata-common-exception.git</url>
+    <description>jarkata cocmmon exception</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

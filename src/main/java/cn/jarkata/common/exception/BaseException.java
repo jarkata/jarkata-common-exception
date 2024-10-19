@@ -15,8 +15,6 @@ public class BaseException extends RuntimeException {
         this(errorCode.getCode(), errorCode.getMessage(), ex);
     }
 
-
-
     /**
      * 基础异常类
      *

@@ -5,6 +5,14 @@ package cn.jarkata.common.exception;
  */
 public class DBException extends BaseException {
 
+    public DBException(ErrorCode errorCode) {
+        super(errorCode);
+    }
+
+    public DBException(ErrorCode errorCode, Throwable ex) {
+        super(errorCode, ex);
+    }
+
     public DBException(String code, String message) {
         super(code, message);
     }

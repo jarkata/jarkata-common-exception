@@ -1,14 +1,21 @@
 package cn.jarkata.common.exception;
 
-import java.util.Objects;
-
 /**
  * 基础异常
  */
 public class BaseException extends RuntimeException {
 
-    private String code;
-    private String message;
+    private final String code;
+
+    public BaseException(ErrorCode errorCode) {
+        this(errorCode.getCode(), errorCode.getMessage());
+    }
+
+    public BaseException(ErrorCode errorCode, Throwable ex) {
+        this(errorCode.getCode(), errorCode.getMessage(), ex);
+    }
+
+
 
     /**
      * 基础异常类
@@ -17,7 +24,8 @@ public class BaseException extends RuntimeException {
      * @param message 错误信息
      */
     public BaseException(String code, String message) {
-        this(code, message, null);
+        super(message);
+        this.code = code;
     }
 
     /**
@@ -36,9 +44,8 @@ public class BaseException extends RuntimeException {
      * @param writableStackTrace 是否写堆栈
      */
     public BaseException(String code, String message, Throwable cause, boolean writableStackTrace) {
-        super(code + "｜" + message, cause, false, writableStackTrace);
+        super(message, cause, false, writableStackTrace);
         this.code = code;
-        this.message = message;
     }
 
     public String getCode() {
@@ -47,9 +54,6 @@ public class BaseException extends RuntimeException {
 
     @Override
     public String getMessage() {
-        if (Objects.isNull(message)) {
-            return super.getMessage();
-        }
-        return this.message;
+        return super.getMessage();
     }
 }

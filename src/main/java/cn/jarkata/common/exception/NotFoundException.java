@@ -5,12 +5,12 @@ package cn.jarkata.common.exception;
  */
 public class NotFoundException extends BaseException {
 
-    public NotFoundException(ErrorCode errorCode) {
-        super(errorCode);
+    public NotFoundException(ResponseCode responseCode) {
+        super(responseCode);
     }
 
-    public NotFoundException(ErrorCode errorCode, Throwable ex) {
-        super(errorCode, ex);
+    public NotFoundException(ResponseCode responseCode, Throwable ex) {
+        super(responseCode, ex);
     }
 
     public NotFoundException(String code, String message) {

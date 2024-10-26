@@ -5,12 +5,12 @@ package cn.jarkata.common.exception;
  */
 public class BusinessException extends BaseException {
 
-    public BusinessException(ErrorCode errorCode) {
-        super(errorCode);
+    public BusinessException(ResponseCode responseCode) {
+        super(responseCode);
     }
 
-    public BusinessException(ErrorCode errorCode, Throwable ex) {
-        super(errorCode, ex);
+    public BusinessException(ResponseCode responseCode, Throwable ex) {
+        super(responseCode, ex);
     }
 
     /**

@@ -27,9 +27,8 @@ public class BaseExceptionTest {
         long start = System.currentTimeMillis();
         for (int index = 0; index < 100000000; index++) {
             try {
-                new NotFoundException("", "");
-            } catch (Exception ex) {
-                ex.printStackTrace();
+                throw new NotFoundException("", "");
+            } catch (Exception ignored) {
             }
         }
         System.out.println(System.currentTimeMillis() - start);

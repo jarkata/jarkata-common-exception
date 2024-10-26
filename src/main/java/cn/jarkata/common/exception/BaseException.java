@@ -7,12 +7,12 @@ public class BaseException extends RuntimeException {
 
     private final String code;
 
-    public BaseException(ErrorCode errorCode) {
-        this(errorCode.getCode(), errorCode.getMessage());
+    public BaseException(ResponseCode responseCode) {
+        this(responseCode.getCode(), responseCode.getMessage());
     }
 
-    public BaseException(ErrorCode errorCode, Throwable ex) {
-        this(errorCode.getCode(), errorCode.getMessage(), ex);
+    public BaseException(ResponseCode responseCode, Throwable ex) {
+        this(responseCode.getCode(), responseCode.getMessage(), ex);
     }
 
     /**

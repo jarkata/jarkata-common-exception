@@ -13,6 +13,14 @@ public class BusinessException extends BaseException {
         super(responseCode, ex);
     }
 
+    public BusinessException(ResponseCode responseCode, String message) {
+        super(responseCode, message);
+    }
+
+    public BusinessException(ResponseCode responseCode, String message, Throwable cause) {
+        super(responseCode, message, cause);
+    }
+
     public BusinessException(ResponseCode responseCode, Throwable cause, boolean writableStackTrace) {
         super(responseCode, cause, writableStackTrace);
     }

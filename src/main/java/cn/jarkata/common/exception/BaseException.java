@@ -11,8 +11,21 @@ public class BaseException extends RuntimeException {
         this(responseCode, null, false);
     }
 
+    public BaseException(ResponseCode responseCode, String message) {
+        this(responseCode, message, null, false);
+    }
+
     public BaseException(ResponseCode responseCode, Throwable ex) {
         this(responseCode, ex, true);
+    }
+
+    public BaseException(ResponseCode responseCode, String message, Throwable cause) {
+        this(responseCode, message, cause, true);
+    }
+
+    public BaseException(ResponseCode responseCode, String message, Throwable cause, boolean writableStackTrace) {
+        super(message, cause, false, writableStackTrace);
+        this.code = responseCode.getCode();
     }
 
     public BaseException(ResponseCode responseCode, Throwable cause, boolean writableStackTrace) {

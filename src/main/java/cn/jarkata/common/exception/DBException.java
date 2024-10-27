@@ -9,15 +9,11 @@ public class DBException extends BaseException {
         super(responseCode);
     }
 
+    public DBException(ResponseCode responseCode, String message) {
+        super(responseCode, message);
+    }
+
     public DBException(ResponseCode responseCode, Throwable ex) {
         super(responseCode, ex);
-    }
-
-    public DBException(String code, String message) {
-        super(code, message);
-    }
-
-    public DBException(String code, String message, Throwable cause) {
-        super(code, message, cause, true);
     }
 }

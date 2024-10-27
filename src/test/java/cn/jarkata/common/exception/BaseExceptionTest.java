@@ -27,7 +27,7 @@ public class BaseExceptionTest {
         long start = System.currentTimeMillis();
         for (int index = 0; index < 100000000; index++) {
             try {
-                throw new NotFoundException("", "");
+                throw new NotFoundException(ResponseCodeEnum.NOT);
             } catch (Exception ignored) {
             }
         }
@@ -40,4 +40,18 @@ public class BaseExceptionTest {
         System.out.println(System.currentTimeMillis() - startstr);
     }
 
+    enum ResponseCodeEnum implements ResponseCode {
+        NOT,
+        ;
+
+        @Override
+        public String getCode() {
+            return null;
+        }
+
+        @Override
+        public String getMessage() {
+            return null;
+        }
+    }
 }

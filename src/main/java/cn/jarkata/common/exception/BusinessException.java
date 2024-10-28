@@ -3,7 +3,7 @@ package cn.jarkata.common.exception;
 /**
  * 业务异常
  */
-public class BusinessException extends BaseException {
+public class BusinessException extends SystemException {
 
     public BusinessException(ResponseCode responseCode) {
         super(responseCode);

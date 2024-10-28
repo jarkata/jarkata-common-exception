@@ -3,7 +3,7 @@ package cn.jarkata.common.exception;
 /**
  * 未找到数据时的异常
  */
-public class NotFoundException extends BaseException {
+public class NotFoundException extends BusinessException {
 
     public NotFoundException(ResponseCode responseCode) {
         super(responseCode);

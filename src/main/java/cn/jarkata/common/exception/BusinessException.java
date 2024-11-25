@@ -3,26 +3,28 @@ package cn.jarkata.common.exception;
 /**
  * 业务异常
  */
-public class BusinessException extends SystemException {
+public class BusinessException extends RuntimeException implements BaseException {
+
+    private final String code;
 
     public BusinessException(ResponseCode responseCode) {
-        super(responseCode);
+        this(responseCode, null, false);
     }
 
     public BusinessException(ResponseCode responseCode, Throwable ex) {
-        super(responseCode, ex);
+        this(responseCode, ex, true);
     }
 
     public BusinessException(ResponseCode responseCode, String message) {
-        super(responseCode, message);
+        this(responseCode, null, false);
     }
 
     public BusinessException(ResponseCode responseCode, String message, Throwable cause) {
-        super(responseCode, message, cause);
+        this(responseCode.getCode(), message, cause, true);
     }
 
     public BusinessException(ResponseCode responseCode, Throwable cause, boolean writableStackTrace) {
-        super(responseCode, cause, writableStackTrace);
+        this(responseCode.getCode(), responseCode.getMessage(), cause, writableStackTrace);
     }
 
     /**
@@ -42,14 +44,25 @@ public class BusinessException extends SystemException {
      * @param message 错误信息
      */
     public BusinessException(String code, String message) {
-        super(code, message);
+        this(code, message, null, false);
     }
 
     public BusinessException(String code, String message, Throwable cause) {
-        super(code, message, cause);
+        this(code, message, cause, true);
     }
 
     public BusinessException(String code, String message, Throwable cause, boolean writableStackTrace) {
-        super(code, message, cause, writableStackTrace);
+        super(message, cause, false, writableStackTrace);
+        this.code = code;
+    }
+
+    @Override
+    public String getCode() {
+        return code;
+    }
+
+    @Override
+    public String getMessage() {
+        return "[" + code + "]" + super.getMessage();
     }
 }

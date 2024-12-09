@@ -7,7 +7,7 @@ public class SystemExceptionTest {
     @Test
     public void test() {
         try {
-            throw new IllegalArgumentException("参数失败");
+            throw new IllegalArgumentException(ResponseCodeEnum.NOT, "参数失败");
         } catch (Exception ex) {
             BaseException baseException = new BusinessException("e", ex.getMessage(), ex);
             String message = baseException.getMessage();
@@ -46,12 +46,12 @@ public class SystemExceptionTest {
 
         @Override
         public String getCode() {
-            return null;
+            return "23424";
         }
 
         @Override
         public String getMessage() {
-            return null;
+            return "34242";
         }
     }
 }
